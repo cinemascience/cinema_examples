@@ -1,0 +1,19 @@
+#!/bin/bash
+
+datadir="cinema_spreadsheet_example"
+
+./gensmall
+size=small
+echo "running $size dataset ..."
+rm -rf ../$datadirdata/$size/experiment.cdb
+echo "installing database ..."
+cp -rf datasmall.cdb ../$datadir/$size/experiment.cdb
+echo
+
+./genbig
+size=big
+echo "running $size dataset ..."
+rm -rf ../$datadirdata/$size/experiment.cdb
+echo "installing database ..."
+cp -rf datasmall.cdb ../$datadir/$size/experiment.cdb
+
