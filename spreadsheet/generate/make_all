@@ -1,19 +1,18 @@
 #!/bin/bash
 
-datadir="cinema_spreadsheet_example"
+datadir="cinema_example_spreadsheet"
 
-./gensmall
-size=small
-echo "running $size dataset ..."
-rm -rf ../$datadirdata/$size/experiment.cdb
-echo "installing database ..."
-cp -rf datasmall.cdb ../$datadir/$size/experiment.cdb
-echo
+sizes=("big" "small")
 
-./genbig
-size=big
-echo "running $size dataset ..."
-rm -rf ../$datadirdata/$size/experiment.cdb
-echo "installing database ..."
-cp -rf datasmall.cdb ../$datadir/$size/experiment.cdb
+for size in ${sizes[@]}; do
+    source="data$size.cdb"
+    destination="../$datadir/$size/experiment.cdb"
 
+    echo "running $size dataset ..."
+    echo "source:      $source"
+    echo "destination: $destination"
+    ./gen$size
+    rm -rf $destination 
+    mv $source $destination 
+    echo
+done
