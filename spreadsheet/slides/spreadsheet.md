@@ -93,7 +93,7 @@ First, we'll start with a simple, smoothly varying example and move to this more
 ![bg](img/background.png)
 # A simple example of a Cinema Database
 
-In `example` directory, we'll start with the `small` example. First we'll examine the database, then the Cinema viewer installed alongside it. This is a file-based example (using a web browser, but only working on local files).
+In `example` directory, we'll start with the `small` example. First we'll examine the database, then the Cinema viewer installed alongside it. This is a file-based example, in which the database and viewer are found together, which is a common use case. 
 
 This directory has the following contents:
 
