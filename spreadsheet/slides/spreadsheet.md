@@ -9,13 +9,13 @@
 <link rel="stylesheet" type="text/css" href="css/ecp.css"></link>
 
 ![bg](img/background.png)
-# Cinema Spreadsheet Example 2020
-## Online Tutorial
+# Cinema Spreadsheet Example
+## Online Tutorial, 10 March 2020
 
 David Rogers, James Ahrens, Terry Turton, Soumya Dutta,
 Divya Banesh, Roxana Bujack, Ethan Stam
 
-<small>LA-UR-19-31442 (subset)</small>
+<small>LA-UR-19-31442</small>
 
 
 ---
