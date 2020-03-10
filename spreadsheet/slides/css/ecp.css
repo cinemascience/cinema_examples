@@ -1,0 +1,8 @@
+.slide {
+    background-image: url("img/background.png");
+    background: white;
+}
+
+.slide h1 {
+    color: black !important;
+}
