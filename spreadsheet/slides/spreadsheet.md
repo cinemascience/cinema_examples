@@ -172,12 +172,34 @@ Explore this with a Cinema viewer, and scroll through the images using the param
 
 ---
 ![bg](img/background.png)
+# Explore another small dataset, with a single parameter 
+
+<img src="img/exp_small.png" width="600" align="right">
+
+Explore this with a Cinema viewer, and scroll through the images using the parameter sliders.
+
+- [Small Experiment](materials/experiment_small.html) link in [tutorial page](tutorial.html)
+- Scroll through time
+- Change the size of the image
+
+---
+![bg](img/background.png)
 # Try a database with a few more parameters
 
 <img src="img/volume.png" width="600" align="right">
 
 - [Volume Dataset](materials/volume.html) link in [tutorial page](tutorial.html)
 - Scroll through time, camera angle, and slice plane position
+- Change the size of the image
+
+---
+![bg](img/background.png)
+# Finally, compare two datasets side-by-side 
+
+<img src="img/sphere.png" width="600" align="right">
+
+- [Comparison Example](materials/spheres.html) link in [tutorial page](tutorial.html)
+- Scroll through camera angle
 - Change the size of the image
 
 ---
@@ -219,11 +241,21 @@ theta,phi,vti x-radius,pdb,FILE,FILE_VTI,FILE_PDB
 
 ---
 ![bg](img/background.png)
+# An example of Cinema:Explorer viewer on more complex data 
+
+<img src="img/exp_big.png" width="50%" align="right">
+
+- *Big Experiment* link in **tutorial home page**
+- select "Multiple Artifacts" from the database list at the top, press `load` button
+
+
+---
+![bg](img/background.png)
 # Cinema Explorer viewer supports multiple data types
 
 <img src="img/explorer_multiple.png" width="50%" align="right">
 
-- `Cinema Explorer` link in **tutorial home page**
+- *Cinema Explorer* link in **tutorial home page**
 - select "Multiple Artifacts" from the database list at the top, press `load` button
 
 ---

@@ -2,17 +2,16 @@
 <html>
 
 <head>
-    <meta app="cinema:compare" version="1.0">
     <meta charset="utf-8">
     <link rel='stylesheet' href='cinema/compare/1.0/css/compare.css'>
     <link rel='stylesheet' href='cinema/compare/1.0/css/common.css'>
-    <script src='cinema/lib/d3.v4.min.js'></script>
+    <script src='https://d3js.org/d3.v4.min.js'></script>
 </head>
 
 <body>
 <div class="container">
 <header>
-    <h2>CinemaView</h2>
+    <h2>Cinema:View</h2>
 </header>
 
 <div id="resultsArea">
@@ -33,7 +32,7 @@
 </div>
 
    		<script>
-			function onlyUnique(value, index, self) {
+			function onlyUnique(value, index, self) { 
 			    return self.indexOf(value) === index;
 			}
 
@@ -46,10 +45,11 @@
 				return key;
 			}
 
-            var dataSets = ["experiment.cdb"];
-            // START: add code to manage databases to view 
-            // END:   add code to manage databases to view 
-
+			// START: Array of databases to view
+   			var dataSets = [ "experiment_small.cdb" ];
+   			// var dataSets = [ "data/sphere.cdb", "" ];
+			// END : Array of databases to view
+   			
    			var dataResults = null;
    			var dataValues = null;
    			var query = {};
@@ -95,7 +95,7 @@
 			function updateResults() {
 				dataResults.forEach(function(result, index) {
 		   						var imgSrcKey = getLookupKey(result.keys, query);
-		   						if (imgSrcKey in result.lookup) {
+		   						if (imgSrcKey in result.lookup) {	
 			   						var imgSrc = dataSets[index] + "/" +result.lookup[imgSrcKey]["FILE"];
 				   					images[index].img.attr("src", imgSrc);
 		   						}
@@ -171,7 +171,7 @@
 
 					images.push({img: img});
 
-		   			if (imgSrcKey in result.lookup) {
+		   			if (imgSrcKey in result.lookup) {	
 			   			var imgSrc = dataSets[index] + "/" + result.lookup[imgSrcKey]["FILE"];
 				   		images[index].img.attr("src", imgSrc);
 		   			}
@@ -181,7 +181,7 @@
 
 				});
 			}
-
+   			
    		</script>
    </body>
 </html>
