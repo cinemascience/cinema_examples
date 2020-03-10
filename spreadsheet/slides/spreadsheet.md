@@ -61,12 +61,8 @@ Designed to help explore extreme scale data.
 ![bg](img/background.png)
 # A note about Cinema Viewers and browser permissions
 
-Browsers may not allow access to local files, which is needed by some Cinema viewers. To change this, set the following options for your browser:
+Browsers may not allow access to local files, which is needed by some Cinema viewers. To change this, set the following options for your browser (Firefox and Chrome are Cinema's offically supported browsers, though others may work as well):
 
-- Safari
-    - Safari->Preferences->Advanced->Show Develop menu in menu bar
-    - Safari->Develop->Disable Local File Restrictions (on)
-    - **NOTE:** Reset file restrictions when you are done
 - Firefox
     - In address bar, input **about:config:**
 		- Change **privacy.file_unique_origin** to **false**
@@ -170,17 +166,19 @@ data/
 
 Explore this with a Cinema viewer, and scroll through the images using the parameter sliders.
 
-- `Halo Dataset` link in **tutorial home page**
-- Works for any number of parameters
-- Works for any number of artifacts
+- [Halo Dataset](materials/halo.html) link in [tutorial page](tutorial.html)
+- Scroll through time
+- Change the size of the image
 
 ---
 ![bg](img/background.png)
-# A sample database with a few more parameters
+# Try a database with a few more parameters
 
 <img src="img/volume.png" width="600" align="right">
 
-- `Volume Dataset` entry in **tutorial home page**
+- [Volume Dataset](materials/volume.html) link in [tutorial page](tutorial.html)
+- Scroll through time, camera angle, and slice plane position
+- Change the size of the image
 
 ---
 ![bg](img/background.png)
@@ -192,6 +190,7 @@ Explore this with a Cinema viewer, and scroll through the images using the param
     - `NaN`, empty values are fine
     - viewers, algs are expected to properly deal with this
 
+Example of a messy `data.csv` file:
 ```
 temp,pressure,vel,time,FILE
 3.0,1.0,,1.0,results/1.csv
