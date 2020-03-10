@@ -329,7 +329,7 @@ Viewers and components can be used in a variety of ways:
 ---
 ![bg](img/background.png)
 # Viewer `Cinema:View`
-<img src="img/compare.png" width="60%" align="right">
+<img src="img/sphere.png" align="right">
 Browser-based basic viewer for image-based output
 
 - Basic viewer, can be easily edited to view multiple databases
