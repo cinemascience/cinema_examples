@@ -1,0 +1,15 @@
+[
+	{
+		"database_name-comment" : "The name of the dataset. It will appear in the dropdown.",
+		"database_name": "sphere test",
+
+		"databases-comment" : "JSON array containing list of datasets to view",
+		"datasets": 
+		[
+			{
+				"name": "example",
+				"location": "example.cdb"
+			}
+		]
+	}
+]

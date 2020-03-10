@@ -2,7 +2,7 @@
     $size: 16:9
     $theme: default
     page_number: true
-    footer: Supercomputing 2019
+    footer: Spreadsheet Example 2020 
 -->
 <!-- *footer: -->
 <!-- *page_number: -->
@@ -21,34 +21,40 @@ Divya Banesh, Roxana Bujack, Ethan Stam
 ---
 ![bg](img/background.png)
 
-# Example Goals
+# Goals for this example
 
 <!-- TODO update image to montage -->
 <img src="img/montage.png" width="35%" align="right" valign="top">
 
 - **Introduce Cinema**
-- **Create a Cinema Spreadsheet Example**
-	- Create and inspect a simple Cinema database
+    - Provide some basic Cinema concepts
+- **Examples**
+	- Understand and inspect examples of Cinema databases 
+        - a fully-populated database
+        - a sparse database
 - **Further Information**
 	- Pointers to more tutorials and instructions
+
+---
+![bg](img/background.png)
+# Introduce Cinema 
 
 ---
 ![bg](img/background.png)
 # What is Cinema?
 <img src="img/ecosystem.png" width="50%" align="right">
 
-Cinema is and ecosystem consisting of:
+Cinema is a data exploration ecosystem designed to help explore extreme scale data. The ecosystem consist of:
 
 - database specification,
 - database writers
 - database viewers
 - algorithms
 
-Designed to help explore extreme scale data.
 
 ---
 ![bg](img/background.png)
-# Important Terms
+# Important Cinema Terms
 
 - **Cinema database:** a set of data in permanent storage, as described by the Cinema Specification, consisting of **artifacts** and parameters.
 
@@ -57,246 +63,176 @@ Designed to help explore extreme scale data.
     - example: a set of graphs
     - example: a simulation grid
     - example: `.vti` file
----
-![bg](img/background.png)
-# A note about Cinema Viewers and browser permissions
-
-Browsers may not allow access to local files, which is needed by some Cinema viewers. To change this, set the following options for your browser (Firefox and Chrome are Cinema's offically supported browsers, though others may work as well):
-
-- Firefox
-    - In address bar, input **about:config:**
-		- Change **privacy.file_unique_origin** to **false**
-- Chrome (exit Chrome)
-    - use --disable-web-security command line option for this session
-    - `open_tutorial` file has an example for Mac
-
 
 ---
 ![bg](img/background.png)
 # Digging into Cinema Databases
 <img src="img/coder.png" width="40%" align="right">
 
-A Cinema database is a set of artifacts, parameters and semantics.
+A Cinema database is a set of artifacts, parameters and semantics. The [Cinema Specification](https://github.com/cinemascience/cinema/blob/master/specs/dietrich/01/cinema_specD_v012.pdf) contains detailed information, and:
 
-- [Cinema Specification](https://github.com/cinemascience/cinema/blob/master/specs/dietrich/01/cinema_specD_v012.pdf)
-    - Describes the format (csv), and a minimal set of restrictions on the data.
-    - A set of artifacts, and parameters associated with those files.
-    - Note that location of artifacts is not restricted by specification (can be local or remote), but for simplicity, this tutorial covers local examples.
+- Describes the format (csv), and a minimal set of restrictions on the data.
+- Describes a set of artifacts, and parameters associated with those files.
 
 ---
 ![bg](img/background.png)
-# A hand-editable example of a Cinema Database
+# Examples 
+
+---
+![bg](img/background.png)
+# A set of Cinema 'spreadsheet' examples 
+
+These examples are based on our interactions with scientists. We have found that scientists keep spreadsheets of parameter/artifact mappings for complex data from experiments. The parameters can include things like experiment settings, results from measurements, etc. The artifacts can be such things as graphs, etc.
+
+These can be explored using cinema databases and viewers.
+
+First, we'll start with a simple, smoothly varying example and move to this more complex use case, which has much messier data.
+
+---
+
+![bg](img/background.png)
+# A simple example of a Cinema Database
+
+In `example` directory, we'll start with the `small` example. First we'll examine the database, then the Cinema viewer installed alongside it. This is a file-based example (using a web browser, but only working on local files).
+
+This directory has the following contents:
+
+```
+example/
+    small/
+        cinema/          (cinema files needed by the viewer)
+        cinema_view.html (a browser-based viewer file)
+        example.cdb/     (a simple example cinema database)
+```
+---
+
+![bg](img/background.png)
+# The Cinema Database 
 
 No matter how complex, all Cinema databases have the same elements.
+- a `<name>.cdb` directory containing:
+- a `data.csv` file
+- optional artifact files
+
+The `data.csv` file maps parameters to data artifacts. In this example, it maps a single parameter (amplitude) to an image. The file's contents look like this:
 
 ```
-example_01.cdb/
-    data.csv (parameters)
-
-example_02.cdb/
-    data.csv (parameters)
-    01.png   (artifact files)
-    02.png
-    03.png
-    ...
-```
-
-Other data can reside in the `<>.cdb` directory, and is not controlled by the spec.
-
----
-![bg](img/background.png)
-# How would you create one from scratch?
-
-- Use Case: you have a set of images defined by some parameters (say, time ...)
-
-```
-data/
-    x-42.png
-    x-43.png
-    x-44.png
-    x-45.png
-    x-46.png
-    x-48.png
+amplitude,FILE
+0.0,plot_001.png
+0.1,plot_002.png
+0.2,plot_003.png
+0.3,plot_004.png
 ...
 ```
 
 ---
+
 ![bg](img/background.png)
-# Cinema Database
+# A note about Cinema Viewers and browser permissions
 
-Create a `data.csv` file, according to the specification:
+When Cinema viewers are used on local files, browsers can restrict access to local files. To change this, set the following options for your browser (Firefox and Chrome are Cinema's officially supported browsers, though others may work as well):
 
-Format is `(parameters)(artifacts)`.
+- Firefox (setting depends upon version of Firefox)
+    - In address bar, input **about:config:**
+		- set **privacy.file_unique_origin** to **false**
+        - set *security.fileuri.strict_origin_policy* to **false**
+- Chrome (exit Chrome)
+    - use --disable-web-security command line option for this session
+    - `open_chrome` file in this example shows how to do this from the command line for Mac 
+
+
+---
+
+![bg](img/background.png)
+# A database and a Cinema Viewer 
+
+<img src="img/example.png" width="600" align="right">
+
+We can now use a viewer to look at the database, either through `File->Open` or pasting the file location into the browser's navigation bar. 
+
+In this example, we are using `Cinema:View`, which is used to view simple databases.`Cinema:View` has three types of controls:
+
+1. A database selector widget
+2. An `Image Size` control
+3. A slider for each parameter in the database
+---
+
+![bg](img/background.png)
+# Types of databases `Cinema:View` can view
+
+<img src="img/example.png" width="600" align="right">
+
+`Cinema:View` is intended to work with image databases that are *fully populated*. This means that every combinations of sliders is mapped to a data artifact. This is a very common use case, especially for databases exported from applications such as ParaView.
+
+---
+
+![bg](img/background.png)
+# Creating a database from a spreadsheet 
+
+The next example is for messier data, as described in the first slide. 
+
+We have found that scientists keep spreadsheets of parameter/artifact mappings for complex data from experiments. The parameters can include things like experiment settings, results from measurements, etc. The artifacts can be such things as graphs, etc. 
+
+These can easily be converted to a Cinema database by exporting the spreadsheet to a `.csv` file, and creating a Cinema database as in the above examples.
+
+However, because the data can be messier (missing, not fully populated), we need to use a different viewer.
+
+---
+
+![bg](img/background.png)
+# A messier example of a Cinema Database
+
+In `example` directory, look at the `big` example. This contains a database that is sparse (has missing values), and not fully populated (does not have every possible combination of parameter values.
+
+This directory has the following contents:
 
 ```
-time,FILE
-42,x-42.png
-43,x-43.png
-44,x-44.png
-45,x-45.png
-46,x-46.png
-48,x-48.png
-49,x-49.png
-50,x-50.png
-52,x-52.png
-53,x-53.png
+example/
+    big/
+        cinema/              (cinema files needed by the viewer)
+        cinema_explorer.html (a browser-based viewer file)
+        experiment_big.cdb/  (a simple example cinema database)
+```
+---
+
+![bg](img/background.png)
+# The `data.csv` file  
+
+The `data.csv` file included in this example is sparse and not fully populated:
+
+```
+a,b,c,d,e,f,g,h,i,j,FILE
+12.55,35.0,,,24.0,23.0,37.0,102.5,4.87,-33.0,plot_001.png
+11.35,8.0,2.5,7.0,42.4,46.0,40.0,12.5,9.46,14.0,plot_002.png
+12.4,48.0,,82.0,,36.0,89.0,5.0,6.22,-5.0,plot_003.png
 ...
 ```
 ---
+
 ![bg](img/background.png)
-# That's it ...
+# Viewing a Cinema database with `Cinema:Explorer` 
 
-```
-data/
-    data.csv
-    x-42.png
-    x-43.png
-    x-44.png
-    x-45.png
-    x-46.png
-    x-48.png
-...
-```
 
----
-![bg](img/background.png)
-# Now you can explore this in a viewer
+<img src="img/exp_big.png" width="600" align="right">
 
-<img src="img/halo.png" width="600" align="right">
 
-Explore this with a Cinema viewer, and scroll through the images using the parameter sliders.
+We use `Cinema:Explorer` to view databases like this. This viewer is designed to explore the entire Cinema database at the same time, allowing the user to select ranges of variables in the parallel coordinates viewer at the top. Artifacts that match the query are displayed in the lower widget.
 
-- [Halo Dataset](materials/halo.html) link in [tutorial page](tutorial.html)
-- Scroll through time
-- Change the size of the image
-
----
-![bg](img/background.png)
-# Explore another small dataset, with a single parameter 
-
-<img src="img/exp_small.png" width="600" align="right">
-
-Explore this with a Cinema viewer, and scroll through the images using the parameter sliders.
-
-- [Small Experiment](materials/experiment_small.html) link in [tutorial page](tutorial.html)
-- Scroll through time
-- Change the size of the image
-
----
-![bg](img/background.png)
-# Try a database with a few more parameters
-
-<img src="img/volume.png" width="600" align="right">
-
-- [Volume Dataset](materials/volume.html) link in [tutorial page](tutorial.html)
-- Scroll through time, camera angle, and slice plane position
-- Change the size of the image
-
----
-![bg](img/background.png)
-# Finally, compare two datasets side-by-side 
-
-<img src="img/sphere.png" width="600" align="right">
-
-- [Comparison Example](materials/spheres.html) link in [tutorial page](tutorial.html)
-- Scroll through camera angle
-- Change the size of the image
-
----
-![bg](img/background.png)
-# But ... Data Is 'Messy'
-
-- Smoothly varying databases are nice, and typically come from simulations
-	- Typically have all values expected - entire `data.csv` is populated
-- But real world data can be messy, and this is valid per the spec
-    - `NaN`, empty values are fine
-    - viewers, algs are expected to properly deal with this
-
-Example of a messy `data.csv` file:
-```
-temp,pressure,vel,time,FILE
-3.0,1.0,,1.0,results/1.csv
-3.1,2.0,45.6,1.0,results/2.csv
-3.3,3.0,45.6,1.0,results/3.csv
-4.0,NaN,45.6,1.0,results/4.csv
-...
-```
----
-![bg](img/background.png)
-# A multi-artifact Cinema database
-
-- A database can have multiple artifacts
-	- Example: `materials/data/multi_artifact.cdb`
-    - The database has the same organization as before:
-	- `(set of parameters)(set of artifacts)`
-
-```
-theta,phi,vti x-radius,pdb,FILE,FILE_VTI,FILE_PDB
-0,-180,10,good,image/-180/0.png,wavelet/10.vti,good.pdb
-0,-162,20,N/A,image/-162/0.png,wavelet/20.vti,
-0,-144,30,N/A,image/-144/0.png,wavelet/30.vti,
-0,-126,40,N/A,image/-126/0.png,,
-...
-```
-
----
-![bg](img/background.png)
-# An example of Cinema:Explorer viewer on more complex data 
-
-<img src="img/exp_big.png" width="50%" align="right">
-
-- *Big Experiment* link in **tutorial home page**
-- select "Multiple Artifacts" from the database list at the top, press `load` button
 
 
 ---
 ![bg](img/background.png)
-# Cinema Explorer viewer supports multiple data types
-
-<img src="img/explorer_multiple.png" width="50%" align="right">
-
-- *Cinema Explorer* link in **tutorial home page**
-- select "Multiple Artifacts" from the database list at the top, press `load` button
+# Further Information  
 
 ---
 ![bg](img/background.png)
-# Cinema Explorer viewer supports multiple data types
-<img src="img/explorer_multiple.png" width="50%" align="right">
+# Exploring examples
+<img src="img/tutorial.png" width="60%" align="right">
 
-When viewing this data, `Cinema:Explorer` shows thumbnails for each type of data that it can view.
+Looking at other examples can help you understand more about how viewers and databases can be used. There are several examples included in this tutorial, and they are avialable online as well:
 
-- Clicking on the thumbnail brings up an appropriate viewer for that type of data, if possible.
-- **NOTE:** `Cinema:Explorer` indicates which types of files it doesn't have viewers for.
-
----
-![bg](img/background.png)
-# Cinema Explorer viewer supports multiple data types
-<img src="img/explorer_multiple_volume.png" width="50%" align="right">
-
-ParaView/VTK `.vti` files can be interactively viewed ...
-
----
-![bg](img/background.png)
-# Cinema Explorer viewer supports multiple data types
-<img src="img/explorer_multiple_molecule.png" width="50%" align="right">
-ParaView/VTK `.pdb` files can be interactively viewed ...
-
----
-![bg](img/background.png)
-# How else can we create a Cinema database?
-<img src="img/ascent.png" width="50%" align="right">
-
-- Directly output Cinema from your code
-    - Refer to the specification
-- ASCENT
-    - **in-situ** output
-- ParaView
-    - application
-    - **in-situ:** ParaView catalyst (instructions on cinema website)
-- VisIt
-    - application (instructions on cinema website)
-
-<!-- TODO add montage diagram, including ASCENT example (get from Matt)-->
+- Open `tutorial.html`
+- [Online examples](https://cinemascience.org/cinema_examples/online-examples/tutorial.html) 
 
 ---
 ![bg](img/background.png)
@@ -334,59 +270,13 @@ Browser-based basic viewer for image-based output
 
 - Basic viewer, can be easily edited to view multiple databases
 - Sliders control all windows
-- `Cinema:Compare` will do its best to show images as the parameters are manipulated (missing images will not cause problems).
-
----
-![bg](img/background.png)
-# Viewer `Cinema:View`
-To modify this application, edit the `index.html` file to point to a list of databases you'd like to view:
-
-- tutorial file: `materials/databases.json`
-
-```
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <link rel='stylesheet' href='cinema/compare/1.0/css/compare.css'>
-    <link rel='stylesheet' href='cinema/compare/1.0/css/common.css'>
-    <script src='https://d3js.org/d3.v4.min.js'></script>
-</head>
-...
-    // START: Array of databases to view
-    var dataSets = [ "data/sphere.cdb", "data/sphere.cdb" ];
-    // END : Array of databases to view
-...
-```
+- `Cinema:View` will do its best to show images as the parameters are manipulated (missing images will not cause problems).
 
 ---
 ![bg](img/background.png)
 # Viewer `Cinema:Explorer`
 <img src="img/explorer.png" width="800" align="right">
 Browser-based Explorer for general databases
-
----
-![bg](img/background.png)
-# Cinema:Explorer
-To use this application, edit the `databases.json` file referenced in the html:
-
-```
-[
-    {
-        "name" : "sphere",
-        "directory" : "data/sphere.cdb"
-    },
-    {
-        "name" : "Sphere Multi-Image",
-        "directory" : "data/sphere_multi-image.cdb"
-    },
-    {
-        "name" : "Multiple Artifacts",
-        "directory" : "data/multiple_artifact.cdb"
-    }
-]
-```
 
 ---
 ![bg](img/background.png)
@@ -443,10 +333,6 @@ To use this application, edit the `databases.json` file referenced in the html:
 
 - ECP app examples for 2018 review
 - View of ongoing workflow development for ECP app analysis and tasks
-
----
-![bg](img/background.png)
-# Questions?
 
 ---
 ![bg](img/background.png)
