@@ -6,5 +6,9 @@
 	{
 		"name" : "small",
 		"directory" : "experiment_small.cdb"
+	},
+	{
+		"name" : "cars",
+		"directory" : "cars.cdb"
 	}
 ]

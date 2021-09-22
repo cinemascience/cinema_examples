@@ -1,0 +1,55 @@
+name,economy,cylinders,displacement,power,weight,0-60mph(s),year,FILE
+AMC Concord DL 6,20.2,6,232,90,3265,18.2,79,6cylinders.png
+AMC Hornet Sportabout (Wagon),18,6,258,110,2962,13.5,71,6cylinders.png
+AMC Matador (Wagon),14,8,304,150,4257,15.5,74,8cylinders.png
+AMC Pacer,19,6,232,90,3211,17,75,6cylinders.png
+AMC Rebel SST,16,8,304,150,3433,12,70,8cylinders.png
+Audi 100 LS,20,4,114,91,2582,14,73,4cylinders.png
+Buick Electra 225 Custom,12,8,455,225,4951,11,73,8cylinders.png
+Buick Estate Wagon (Wagon),14,8,455,225,3086,10,70,8cylinders.png
+Buick Regal Sport Coupe (Turbo),17.7,6,231,165,3445,13.4,78,6cylinders.png
+Buick Skylark,20.5,6,231,105,3425,16.9,77,6cylinders.png
+Buick Skylark 320,15,8,350,165,3693,11.5,70,8cylinders.png
+Cadillac Seville,16.5,8,350,180,4380,12.1,76,8cylinders.png
+Chevrolet Caprice Classic,17.5,8,305,145,3880,12.5,77,8cylinders.png
+Chevrolet Concours,17.5,6,250,110,3520,16.4,77,6cylinders.png
+Chevrolet Impala,11,8,400,150,4997,14,73,8cylinders.png
+Chevrolet Malibu Classic (Wagon),19.2,8,267,125,3605,15,79,8cylinders.png
+Chevrolet Monte Carlo Landau,19.2,8,305,145,3425,13.2,78,8cylinders.png
+Chevy C20,10,8,307,200,4376,15,70,8cylinders.png
+Citroen DS-21 Pallas,,4,133,115,3090,17.5,70,4cylinders.png
+Dodge Aspen,18.6,6,225,110,3620,18.7,78,6cylinders.png
+Dodge Aspen,19.1,6,225,90,3381,18.7,80,6cylinders.png
+Dodge Coronet Custom (Wagon),14,8,318,150,4457,13.5,74,8cylinders.png
+Dodge Diplomat,19.4,8,318,140,3735,13.2,78,8cylinders.png
+Dodge Magnum XE,17.5,8,318,140,4080,13.7,78,8cylinders.png
+Dodge Monaco (Wagon),12,8,383,180,4955,11.5,71,8cylinders.png
+Dodge Monaco Brougham,15.5,8,318,145,4140,13.7,77,8cylinders.png
+Dodge St. Regis,18.2,8,318,135,3830,15.2,79,8cylinders.png
+Ford Country Squire (Wagon),15.5,8,351,142,4054,14.3,79,8cylinders.png
+Ford F250,10,8,360,215,4615,14,70,8cylinders.png
+Ford Fairmont (Auto),20.2,6,200,85,2965,15.8,78,6cylinders.png
+Ford Futura,18.1,8,302,139,3205,11.2,78,8cylinders.png
+Ford Gran Torino,14.5,8,351,152,4215,12.8,76,8cylinders.png
+Ford Granada,18.5,6,250,98,3525,19,77,6cylinders.png
+Ford Granada GL,20.2,6,200,88,3060,17.1,81,6cylinders.png
+Ford LTD Landau,17.6,8,302,129,3725,13.4,79,8cylinders.png
+Ford Mustang Boss 302,,8,302,140,3353,8,70,8cylinders.png
+Ford Torino (Wagon),,8,351,153,4034,11,70,8cylinders.png
+Hi 1200D,9,8,304,193,4732,18.5,70,8cylinders.png
+Mazda GLC,46.6,4,86,65,2110,17.9,80,4cylinders.png
+Mazda RX-2 Coupe,19,3,70,97,2330,13.5,72,3cylinders.png
+Mercury Monarch Ghia,20.2,8,302,139,3570,12.8,78,8cylinders.png
+Mercury Zephyr 6,19.8,6,200,85,2990,18.2,79,6cylinders.png
+Oldsmobile Cutlass Salon Brougham,19.9,8,260,110,3365,15.5,78,8cylinders.png
+Oldsmobile Cutlass Supreme,17,8,260,110,4060,19,77,8cylinders.png
+Peugeot 604SL,16.2,6,163,133,3410,15.8,78,6cylinders.png
+Plymouth Satellite (Wagon),,8,383,175,4166,10.5,70,8cylinders.png
+Plymouth Valiant,18,6,225,105,3121,16.5,73,6cylinders.png
+Plymouth Volare,20.5,6,225,100,3430,17.2,78,6cylinders.png
+Plymouth Volare Premier V8,13,8,318,150,3940,13.2,76,8cylinders.png
+Pontiac Catalina,14,8,455,225,4425,10,70,8cylinders.png
+Pontiac Phoenix LJ,19.2,6,231,105,3535,19.2,78,6cylinders.png
+Pontiac Safari (Wagon),13,8,400,175,5140,12,71,8cylinders.png
+Pontiac Ventura Sj,18.5,6,250,110,3645,16.2,76,6cylinders.png
+Saab 900S,,4,121,110,2800,15.4,81,4cylinders.png
